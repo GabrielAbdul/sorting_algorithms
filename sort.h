@@ -1,8 +1,8 @@
 #ifndef _SORT_
 #define _SORT_
 
-#include "stdlib.h"
-#include "stdio.h"
+#include <stdlib.h>
+#include <stdio.h>
 
 
 /**
