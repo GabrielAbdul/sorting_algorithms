@@ -10,7 +10,9 @@
  */
 void quick_sort(int *array, size_t size)
 {
-	quick_sorter(array, size, 0, size - 1);
+	int int_size = size;
+
+	quick_sorter(array, size, 0, int_size - 1);
 }
 
 /**
@@ -19,6 +21,7 @@ void quick_sort(int *array, size_t size)
  * @array: input array
  * @low: index of first element
  * @high: index of last element
+ * @size: size of input array
  *
  * Return: Void
  */
@@ -32,8 +35,6 @@ void quick_sorter(int *array, size_t size, int low, int high)
 		quick_sorter(array, size, low, pos - 1);
 		quick_sorter(array, size, pos + 1, high);
 	}
-	
-	
 }
 
 /**
@@ -58,11 +59,13 @@ int lomuto_partition(int *array, size_t size, int low, int high)
 		{
 			swap(&array[index], &array[j]);
 			index++;
+			if (index < j)
+				print_array(array, size);
 		}
 	}
 	swap(&array[index], &array[high]);
 	print_array(array, size);
-	return index;
+	return (index);
 }
 /**
  * swap - function that swaps two integers
