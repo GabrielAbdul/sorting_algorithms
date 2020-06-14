@@ -10,7 +10,9 @@
  */
 void quick_sort(int *array, size_t size)
 {
-	quick_sorter(array, size, 0, size - 1);
+	int int_size = size;
+
+	quick_sorter(array, size, 0, int_size - 1);
 }
 
 /**
@@ -22,7 +24,7 @@ void quick_sort(int *array, size_t size)
  *
  * Return: Void
  */
-void quick_sorter(int *array, size_t size, int low, int high)
+void quick_sorter(int *array, int size, int low, int high)
 {
 	int pos;
 
@@ -32,8 +34,7 @@ void quick_sorter(int *array, size_t size, int low, int high)
 		quick_sorter(array, size, low, pos - 1);
 		quick_sorter(array, size, pos + 1, high);
 	}
-	
-	
+
 }
 
 /**
@@ -46,7 +47,7 @@ void quick_sorter(int *array, size_t size, int low, int high)
  *
  * Return: position
  */
-int lomuto_partition(int *array, size_t size, int low, int high)
+int lomuto_partition(int *array, int size, int low, int high)
 {
 	int index, j, pivot;
 
@@ -60,9 +61,8 @@ int lomuto_partition(int *array, size_t size, int low, int high)
 			index++;
 		}
 	}
-	swap(&array[index], &array[high]);
-	print_array(array, size);
-	return index;
+	swap(&array[index], &array[high]), print_array(array, size);
+	return (index);
 }
 /**
  * swap - function that swaps two integers
