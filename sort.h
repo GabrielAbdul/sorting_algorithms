@@ -1,5 +1,5 @@
-#ifndef _SORT
-#define _SORT_
+#ifndef SORT_H
+#define SORT_H
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -26,8 +26,8 @@ void selection_sort(int *array, size_t size);
 void insertion_sort_list(listint_t **list);
 void node_swap(listint_t **head, listint_t **new, listint_t *current);
 int partition(int arr[], int low, int high);
-int lomuto_partition(int *array, size_t size, int low, int high);
+int lomuto_partition(int *array, int size, int low, int high);
 void swap(int *num_one, int *num_two);
-void quick_sorter(int *array, size_t size, int low, int high);
+void quick_sorter(int *array, int size, int low, int high);
 void quick_sort(int *array, size_t size);
 #endif
